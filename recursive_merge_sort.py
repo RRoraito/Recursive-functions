@@ -2,7 +2,7 @@ def mergeSort(list):
     if len(list) == 1:
         return list
 
-    left, right = split(list)#just for the sake of simplicity the split is func
+    left, right = split(list)
     left = mergeSort(left)
     right = mergeSort(right)
     return merge(left, right)
