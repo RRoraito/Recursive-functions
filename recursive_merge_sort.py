@@ -2,8 +2,7 @@ def mergeSort(list):
     if len(list) == 1:
         return list
 
-    left = list[:(len(list)//2)-1]
-    right = list[len(list)//2-1:]
+    left, right = split(list)#just for the sake of simplicity the split is func
     left = mergeSort(left)
     right = mergeSort(right)
     return merge(left, right)
@@ -24,6 +23,12 @@ def merge(left, right):
         sorted.append(right[0])
         right.pop(0)
     return sorted
+
+def split(list):
+    middle = len(list)//2
+    left = list[:middle]
+    right = list[middle:]
+    return left, right
 
 def isSorted(list):
     if len(list) == 0 or len(list) == 1:
